@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto+Mono&display=swap');
+
+*{
+
+    font-family: 'PT Sans', sans-serif;
+    box-sizing: padding-box;
+    margin:0;
+    padding: 0;
+
+}
+/* Index */
+
+
+body {
+
+    background: #ffffff;
+}
+h2 {
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    padding: 20px;
+    background: rgb(163, 163, 163);
+    border-radius: 10px;
+}
+.form-field-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.form-actions-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    margin-top: 20px;
+
+}
+.btn-text {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    font-size: large;
+
+}
+.btn-text:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+.btn-submit {
+    background: rgb(79, 79, 82);
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+    font-size: large;
+}
+.btn-submit:hover {
+    background: #fff;
+    color: rgb(79, 79, 82);
+}
+
+
+input {
+
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    outline: none;
+}
+
+label {
+    font-size: 18px;
+}
+
+
+
+.error {
+
+   background: #F2DEDE;
+
+   color: #0c0101;
+
+   padding: 10px;
+
+   width: 95%;
+
+   border-radius: 5px;
+
+   margin: 20px auto;
+
+}
+
+h1 {
+
+    text-align: center;
+
+    color: rgb(134, 3, 3);
+
+}
+
+a {
+
+    float: right;
+
+    background: rgb(183, 225, 233);
+
+    padding: 10px 15px;
+
+    color: #fff;
+
+    border-radius: 10px;
+
+    margin-right: 10px;
+
+    border: none;
+
+    text-decoration: none;
+
+}
+
+a:hover{
+
+    opacity: .7;
+
+}
