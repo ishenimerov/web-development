@@ -4,7 +4,12 @@ function fetchAndDisplayPosts() {
 
     // Fetch posts from the server using an endpoint like 'getPosts.php'
     fetch('api/getPosts.php')
-        .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
         .then(data => {
             console.log(data);
             // Check if there are any posts
@@ -13,18 +18,24 @@ function fetchAndDisplayPosts() {
                 data.forEach(post => {
                     // Create a new div element to hold the post card
                     const postContainer = document.createElement('div');
-                    postContainer.classList.add('post-card'); // Add a CSS class to the container
+                    postContainer.classList.add('post-wrapper');
+                   // Split post_description into paragraphs
+                   const paragraphs = post.post_description.split('\n');
 
-                    // Create an HTML template with placeholders for post data
-                    const template = `
-                        <div>
-                            <h2>${post.post_title}</h2>
-                        </div>
-                        <div>
-                            <p>${post.post_description}</p>
-                        </div>
-                    `;
+                   // Create an HTML template with placeholders for post data
+                   const template = `
+                   <img class="post-image" src="https://sxcontent9668.azureedge.us/cms-assets/assets/Haven1_Hero_5_2600x1400_a23f540f5f.jpg" alt="space-image" style="width: 100%; height: 100%;">
 
+                       <div class='post-header'>
+                       <span class='post-date'>${formatDate(post.post_date)}</span>
+                            <span>${post.post_title}</span>
+                       </div>
+                       <div class='post-content'>
+                           ${paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('')}
+                       </div>
+                       <span style="margin-bottom: 20px; font-weight: 500">${post.user_id}</span>
+                       <hr style="color: black;">
+                   `;
                     // Set the inner HTML of the post container to the template with the actual post data
                     postContainer.innerHTML = template;
 
@@ -44,3 +55,14 @@ function fetchAndDisplayPosts() {
 
 // Call the function when the page loads
 window.addEventListener('load', fetchAndDisplayPosts);
+console.log('dd');
+
+function formatDate(dateString) {
+    const inputDate = new Date(dateString);
+    const formattedDate = inputDate.toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+    });
+    return formattedDate.toUpperCase();
+}

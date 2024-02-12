@@ -14,7 +14,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style/style.css">
         <script src="app.js"></script>
-        <title>HOME</title>
+        <title>My Posts</title>
     </head>
 
     <body>
@@ -22,6 +22,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <?php (include('common/header/header.php')) ?>
             <main>
                 <div class="main-box top">
+                    <span style="text-align: center; font-size: 50px; margin-bottom: 100px;">My posts</span>
                     <div class="top">
                         <div class="bottom" id='posts'>
 

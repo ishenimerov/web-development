@@ -1,5 +1,5 @@
 <?php
-// header('Content-Type: application/json');
+header('Content-Type: application/json');
 include "../db-conn/db_conn.php";
 
 // Query to retrieve all posts
@@ -23,7 +23,6 @@ if (!$result) {
 
         // Convert the array to JSON and echo it
         echo json_encode($posts);
-        echo "<script>console.log(" . $jsonResponse . ")</script>";
     } else {
         // If no posts are found, echo a JSON response with an empty array
         echo json_encode(array());
