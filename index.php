@@ -13,6 +13,11 @@
 <body>
     <div class="container">
         <div class='form-box'>
+            <?php
+            session_start();
+            if (isset($_SESSION['id'])) {
+                header("Location: home.php");
+            } ?>
             <h2>LOGIN</h2>
             <form action="auth/login.php" method="post">
                 <?php if (isset($_GET['error'])) { ?>
