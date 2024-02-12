@@ -14,7 +14,7 @@
     <div class="container">
         <div class='form-box'>
             <h2>LOGIN</h2>
-            <form action="login.php" method="post">
+            <form action="auth/login.php" method="post">
                 <?php if (isset($_GET['error'])) { ?>
 
                     <p class="error">
@@ -31,7 +31,7 @@
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <div class=' form-actions-box'>
-                    <button class="btn-text" type="button" onclick="location.href='register.php';">Sign up</button>
+                    <button class="btn-text" type="button" onclick="location.href='auth/register.php';">Sign up</button>
                     <button class="btn-submit" type="submit">Login</button>
                 </div>
 
