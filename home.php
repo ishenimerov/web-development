@@ -22,9 +22,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <main>
                 <div class="main-box top">
                     <div class="top">
-                        <div>
-                            <?php echo "<h2>Welcome, $name!</h2>"; ?>
-                            <p>Explore our recipes and categories below:</p>
+                        <div class="bottom" id='posts'>
+
                         </div>
                     </div>
                 </div>

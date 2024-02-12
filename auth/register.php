@@ -66,7 +66,7 @@
                 <div class='form-actions-box'>
                     <button class="btn-text" type="button" onclick="location.href='../index.php';">Already have an
                         account?</button>
-                    <button class="btn-submit" type="submit" name="submit">Register</button>
+                    <button class="btn-text" type="submit" name="submit">Register</button>
                 </div>
             </form>
         </div>

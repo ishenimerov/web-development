@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 *{
 
-    font-family: 'PT Sans', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     box-sizing: padding-box;
     margin:0;
     padding: 0;
@@ -13,9 +15,10 @@
 
 body {
 
-    background: #ffffff;
+    background: #fff;
 }
 h2 {
+    color: #fff;
     text-align: center;
 }
 .container {
@@ -32,7 +35,7 @@ h2 {
     justify-content: center;
     width: 500px;
     padding: 20px;
-    background: rgb(163, 163, 163);
+    background: rgb(0, 0, 0);
     border-radius: 10px;
 }
 .form-field-box {
@@ -54,31 +57,24 @@ h2 {
     padding: 0;
     cursor: pointer;
     font-size: large;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 10px;
 
 }
 .btn-text:hover {
-    text-decoration: underline;
-    color: #fff;
-}
-.btn-submit {
-    background: rgb(79, 79, 82);
-    padding: 5px 10px;
-    color: #fff;
+    color: #000;
     border-radius: 5px;
+    padding: 5px 10px;
     border: none;
-    margin-left: 10px;
-    font-size: large;
-}
-.btn-submit:hover {
-    background: #fff;
-    color: rgb(79, 79, 82);
+    background-color: #fff;
+    transition:0.7s;
 }
 
 
 input {
-
     display: block;
-    border: 2px solid #ccc;
+    border: none;
     width: 95%;
     padding: 10px;
     margin: 10px auto;
@@ -88,6 +84,7 @@ input {
 
 label {
     font-size: 18px;
+    color: #fff;
 }
 
 
@@ -121,7 +118,9 @@ label {
   }
 
 .nav-item:hover {
-    background-color: rgb(255, 255, 162);
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    transition:0.7s;
   }
   .site-header {
     border-bottom: 1px solid #ccc;
@@ -248,3 +247,8 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
+.bottom {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 15%;
+  }

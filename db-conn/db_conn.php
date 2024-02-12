@@ -1,14 +1,10 @@
 <?php
 
 $sname = "localhost";
-
-$unmae = "root";
-
+$uname = "root";
 $password = "";
-
-$db_name = "users";
-
-$conn = mysqli_connect($sname, $unmae, $password, $db_name);
+$db_name = "mount-on";
+$conn = mysqli_connect($sname, $uname, $password, $db_name);
 
 if (!$conn) {
 

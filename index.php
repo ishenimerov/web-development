@@ -29,7 +29,7 @@
                 <?php } ?>
                 <div class='form-field-box'>
                     <label>Username</label>
-                    <input type="text" name="uname" placeholder="Email">
+                    <input type="text" name="uname" placeholder="Username">
                 </div>
                 <div class='form-field-box'>
                     <label>Password</label>
@@ -37,7 +37,7 @@
                 </div>
                 <div class=' form-actions-box'>
                     <button class="btn-text" type="button" onclick="location.href='auth/register.php';">Sign up</button>
-                    <button class="btn-submit" type="submit">Login</button>
+                    <button class="btn-text" type="submit">Login</button>
                 </div>
 
             </form>
