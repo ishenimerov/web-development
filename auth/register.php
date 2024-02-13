@@ -27,7 +27,8 @@
                 $stmt->bind_param("ssss", $uname, $hashed_password, $email, $name);
 
                 if ($stmt->execute()) {
-                    echo "Registration successful. You can now log in.";
+                    header("Location: ../index.php");
+
                 } else {
                     echo "Error: " . $stmt->error;
                 }
