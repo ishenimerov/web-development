@@ -35,7 +35,7 @@
                     <label>Password</label>
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
-                <div class=' form-actions-box'>
+                <div class='form-actions-box'>
                     <button class="btn-text" type="button" onclick="location.href='auth/register.php';">Sign up</button>
                     <button class="btn-text" type="submit">Login</button>
                 </div>
