@@ -23,9 +23,11 @@ $result = $conn->query($sql);
     <div class='wrapper'>
         <?php include "common/header/header.php"; ?>
         <main>
+            
+        <h2>Users list</h2>
 
-            <h2>users</h2>
-
+           
+            
             <table class="table">
 
                 <thead>
@@ -75,8 +77,8 @@ $result = $conn->query($sql);
                                 </td>
 
 
-                                <td><a class="btn btn-info" href="update.php?id=<?php echo $row['id']; ?>">Edit</a>&nbsp;<a
-                                        class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
+                                <td><a class="links-btn edit-btn" href="update.php?id=<?php echo $row['id']; ?>">Edit</a>&nbsp;<a
+                                        class="links-btn del-btn" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
 
                             </tr>
 

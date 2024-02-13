@@ -19,7 +19,8 @@
 
         <div class="row">
             Developed by<a href="https://github.com/ishenimerov" target="_blank" rel="noreferrer noopener">
-                Ishen Imerov</a>
+                Ishen Imerov</a> and <a href="https://github.com/Arquinoo" target="_blank" rel="noreferrer noopener">
+                Merey Nurlanuly</a> 
         </div>
     </div>
 </footer>
