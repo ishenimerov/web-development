@@ -28,7 +28,6 @@
 
                 if ($stmt->execute()) {
                     header("Location: ../index.php");
-
                 } else {
                     echo "Error: " . $stmt->error;
                 }
