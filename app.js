@@ -57,7 +57,13 @@ function fetchAndDisplayPosts() {
                 });
             } else {
                 // Display a message if no posts are found
-                postElement.innerHTML = 'No posts found';
+                postElement.innerHTML =`
+                <div class='post-header'>
+                     <span>No posts</span>
+                    <hr style="color: black;">
+                </div>`
+
+
             }
         })
         .catch(error => {

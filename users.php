@@ -1,8 +1,14 @@
 <?php
 
+if (isset($_SESSION['user_name']) && $_SESSION['user_name'] === 'admin') {
+    // Redirect to home page if not admin
+    header("Location: home.php");
+    exit();
+}
 include "db-conn/db_conn.php";
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users WHERE user_name != 'admin'";
+
 
 $result = $conn->query($sql);
 
@@ -55,8 +61,9 @@ $result = $conn->query($sql);
                                         <?php echo $row['email']; ?>
                                     </td>
                                     <td><a class='links-btn edit-btn'
-                                            href="update.php?id=<?php echo $row['id']; ?>">Edit</a>&nbsp;<a
-                                            class='links-btn del-btn' href="delete.php?id=<?php echo $row['id']; ?>">Delete</a>
+                                            href="update-user.php?id=<?php echo $row['id']; ?>">Edit</a>&nbsp;<a
+                                            class='links-btn del-btn'
+                                            href="delete-user.php?id=<?php echo $row['id']; ?>">Delete</a>
                                     </td>
                                 </tr>
                             <?php }

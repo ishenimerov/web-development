@@ -19,7 +19,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
     <body>
         <div class='wrapper'>
-            <?php (include('common/header/header.php')) ?>
+            <?php (include ('common/header/header.php')) ?>
             <main>
                 <div class="main-box top">
                     <span style="text-align: center; font-size: 50px; margin-bottom: 100px;">My posts</span>
@@ -30,7 +30,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     </div>
                 </div>
             </main>
-            <?php (include('common/footer/footer.php')) ?>
+            <?php (include ('common/footer/footer.php')) ?>
         </div>
 
     </body>

@@ -1,14 +1,40 @@
 <?php
 header('Content-Type: application/json');
 include "../db-conn/db_conn.php";
+session_start();
 
-// Query to retrieve all posts
-$sql = "SELECT * FROM posts";
-$result = $conn->query($sql);
+$user_id = $_SESSION['id'];
+$is_home_page = isset($_GET['home']) && $_GET['home'] == '1';
+
+// Determine the SQL query based on the page context
+if ($is_home_page) {
+    // Query to retrieve all posts
+    $sql = "SELECT * FROM posts";
+} else {
+    // Query to retrieve posts for the current user
+    $sql = "SELECT * FROM posts WHERE user_id=?";
+}
+
+$stmt = $conn->prepare($sql);
+
+if ($stmt === false) {
+    $response = array('error' => 'Failed to prepare the SQL statement: ' . $conn->error);
+    http_response_code(500); // Internal Server Error
+    echo json_encode($response);
+    exit(); // Terminate the script
+}
+
+if (!$is_home_page) {
+    // Bind the user_id parameter if not on the home page
+    $stmt->bind_param("i", $user_id);
+}
+
+$stmt->execute();
+$result = $stmt->get_result();
 
 // Check if the query was successful
 if (!$result) {
-    $response = array('error' => 'Database error: ' . $conn->error);
+    $response = array('error' => 'Database error: ' . $stmt->error);
     http_response_code(500); // Internal Server Error
     echo json_encode($response);
     exit(); // Terminate the script
@@ -29,5 +55,6 @@ if (!$result) {
     }
 }
 
-// Close the connection
+// Close the statement and the connection
+$stmt->close();
 $conn->close();
